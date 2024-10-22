@@ -1,0 +1,157 @@
+:root{
+    /*********************** Web site colors ********************/
+    /* Brands colors */
+
+    --color-primary-100: #E9E5F8;
+    --color-primary-200: #D4CCF1;
+    --color-primary-300: #AEA5D5;
+    --color-primary-400: #847BAC;
+    --color-primary-500: #504975;
+    --color-primary-600: #3C3564;
+    --color-primary-700: #2A2454;
+    --color-primary-800: #1C1743;
+    --color-primary-900: #110E38;
+
+    --color-secondary-100: #F4FBF1;
+    --color-secondary-200: #E9F7E5;
+    --color-secondary-300: #D2E9CF;
+    --color-secondary-400: #B7D4B6;
+    --color-secondary-500: #95B896;
+    --color-secondary-600: #6C9E72;
+    --color-secondary-700: #4B8456;
+    --color-secondary-800: #2F6A40;
+    --color-secondary-900: #1C5833;
+
+    --color-accent-100: #FEEECC;
+    --color-accent-200: #FED79B;
+    --color-accent-300: #FDBB68;
+    --color-accent-400: #FB9F43;
+    --color-accent-500: #F97306;
+    --color-accent-600: #D65704;
+    --color-accent-700: #B33E03;
+    --color-accent-800: #902A01;
+    --color-accent-900: #771C01;
+
+    /* Steps sizes font */
+    --ff: 'Blender Pro';
+    --step--3: clamp(0.64rem, 0.6549rem + -0.0192vw, 0.651rem);
+    --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+    --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+    --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+    --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+    --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+    --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+    --step-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
+    --step-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
+    --step-6: clamp(3.3592rem, 2.8691rem + 2.4507vw, 4.7684rem);
+
+    /* Spacing */
+    --space-xxs: .25rem;
+    --space-xs: .5rem;
+    --space-s: .75rem;
+    --space-m: 1rem;
+    --space-l: 1.25rem;
+    --space-xl: 1.75rem;
+    --space-xxl: 2.5rem;
+    /* Utilities */
+    --transition: 0.3s ease-in-out;
+}
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+body{
+    font-size: var(--step-0);
+    font-family: var(--ff);
+    min-height: 100vh;
+    background-color: var(--color-neutral-500);
+    color: var(--color-neutral-300);
+}
+img, picture, svg, video{
+    display: block;
+    max-width: 100%;
+}
+input, textarea, button, select{
+    font: inherit;
+}
+h1{
+    font-size: var(--step-6);
+    margin-block: var(--space-m);
+}
+h2{
+    font-size: var(--step-5);
+    margin-block: var(--space-s);
+}
+h3{
+    font-size: var(--step-4);
+    margin-block: var(--space-xs);  
+}
+:is(h1, h2, h3){
+    text-wrap: balance;
+    color: var(--color-neutral-100);
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+p{
+    font: var(--step-0);
+    margin-bottom: var(--space-xs);
+    text-wrap: pretty;
+    line-height: 1.6;
+}
+/* Containers */
+/* Mobile container utility class: */
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-m);
+    padding-right: var(--space-m);
+}
+/* xs */
+@media (min-width: 475px) {
+    .container {
+        max-width: 475px;
+    }
+}
+/* sm */
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+}
+/* md */
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+/* lg */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+/* xl */
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+/* 2xl */
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+    }
+}
+/* Utilidades */
+.section{
+    padding-block: var(--space-xxl);
+}
