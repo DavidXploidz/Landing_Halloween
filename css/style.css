@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Sail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Sail&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 :root{
     /*********************** Web site colors ********************/
@@ -45,7 +45,7 @@
 
     /* Steps sizes font */
     --ff: 'Manrope', serif;
-    --headings: "Sail", system-ui;
+    --headings: "Zilla Slab", serif;
     --step--3: clamp(0.64rem, 0.6549rem + -0.0192vw, 0.651rem);
     --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
     --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
@@ -110,7 +110,6 @@ h3{
     text-wrap: balance;
     color: var(--color-neutral-200);
     line-height: 1.2;
-    text-transform: uppercase;
     font-family: var(--headings);
 }
 p{
@@ -167,9 +166,21 @@ p{
 /* Utilidades */
 .section{
     padding-block: var(--space-xxl);
+    & h2{
+        font-size: var(--step-4);
+        & span{
+            display: block;
+        }
+    }
 }
 .mx-auto{
     margin-inline: auto;
+}
+.text-center{
+    text-align: center;
+}
+.bg-blue{
+    background-color: var(--color-primary-900);
 }
 .btn{
     min-height: 30px;
@@ -188,10 +199,10 @@ p{
     border-radius: 100vw;
 }
 .btn-primary{
-    background-color: var(--color-primary-500);
+    background-color: var(--color-primary-700);
     color: var(--color-neutral-100);
     &:hover{
-        background-color: var(--color-primary-600);
+        background-color: var(--color-primary-900);
         color: var(--color-neutral-200);
     }
 }
@@ -297,7 +308,8 @@ p{
     background-position: center center;
     background-repeat: no-repeat;
     min-height: 100dvh;
-    border-image: 1 fill linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.9));
+    /* border-image: 1 fill linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.9)); */
+    border-image: 1 fill radial-gradient(ellipse at center, rgba(0,0,0,0.1), rgba(0,0,0,0.9));
 }
 .header__content{
     display: grid;
@@ -306,7 +318,10 @@ p{
 }
 .header__title{
     text-align: center;
-    font-size: var(--step-5);
+    font-size: var(--step-6);
+    & span{
+        display: block;
+    }
 }
 .header__text{
     max-width: 700px;
@@ -314,4 +329,29 @@ p{
     text-align: center;
     color: var(--color-neutral-300);
     font-size: var(--step-1);
+}
+.main{
+    background-color: var(--color-neutral-100);
+    background-image: url('../assets/images/pumpkin.png');
+    background-repeat: no-repeat;
+    background-position: 20px 10px;
+    background-size: 70px;
+}
+@media (min-width: 1175px){ 
+    .main{
+        background-position: calc(100% - 20px) calc(100% - 20px);
+        background-size: 150px;
+    }
+}
+.main__title{
+    color: var(--color-primary-700);
+    text-align: center;
+    font-weight: 900;
+}
+.main__text{
+    color: var(--color-neutral-400);
+    text-align: center;
+    font-size: var(--step-1);
+    max-width: 900px;
+    margin: 0 auto;
 }
