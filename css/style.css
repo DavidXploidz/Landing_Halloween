@@ -303,17 +303,19 @@ p{
     }
 }
 .header{
+    display: grid;
     background-image: url('../assets/images/header.webp');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     min-height: 100dvh;
-    /* border-image: 1 fill linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.9)); */
-    border-image: 1 fill radial-gradient(ellipse at center, rgba(0,0,0,0.1), rgba(0,0,0,0.9));
+    border-image: 1 fill linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.9));
+    /* border-image: 1 fill radial-gradient(ellipse at center, rgba(0,0,0,0.1), rgba(0,0,0,0.9)); */
 }
 .header__content{
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     row-gap: var(--space-xl);
 }
 .header__title{
