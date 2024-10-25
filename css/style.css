@@ -84,7 +84,7 @@ body{
     font-size: var(--step-0);
     font-family: var(--ff);
     min-height: 100vh;
-    background-color: var(--color-neutral-300);
+    background-color: var(--color-neutral-100);
     color: var(--color-neutral-200);
 }
 img, picture, svg, video{
@@ -427,4 +427,16 @@ p{
 .mist-mask{
     -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
     mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+.location{
+    display: grid;
+    row-gap: var(--space-xxl);
+}
+.location iframe{
+    width: 100%;
+}
+@media (min-width: 768px){ 
+    .location{
+        grid-template-columns: 35% 65%;
+    }
 }
