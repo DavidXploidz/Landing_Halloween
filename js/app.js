@@ -43,4 +43,72 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
     }, 1000);
 
+    gsap.registerPlugin(ScrollTrigger)
+
+    gsap.from(".header__title",{
+        y: 40,
+        duration: 1,
+        filter: "blur(10px)",
+        opacity: 0,
+        scale: 1.3,
+        ease: 'bounce.out'
+    });
+
+    gsap.from(".header__text",{
+        y: 40,
+        duration: 1,
+        filter: "blur(10px)",
+        opacity: 0,
+        scale: 1.3,
+        delay: 0.5,
+        ease: 'bounce.out'
+    });
+
+    gsap.from(".header__content .btn",{
+        y: 40,
+        duration: 1,
+        filter: "blur(10px)",
+        opacity: 0,
+        scale: 1.3,
+        delay: 1,
+        ease: 'bounce.out'
+    });
+
+    const main_tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.main',
+            start: 'top 60%',
+            end: 'top 30%',
+            scrub: 1,
+        }
+    })
+    main_tl.from('.main__title', {scaleY: 1.2, y: -100, opacity: 0, filter: "blur(5px)"})
+    main_tl.from('.main__text', {y: 100, opacity: 0})
+
+    const timer_tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.spider-web-decoration h2',
+            start: 'top 60%',
+            end: 'top 30%',
+            scrub: 1,
+        }
+    })
+    timer_tl.from('.spider-web-decoration h2', {scaleY: 1.2, y: -100, opacity: 0, filter: "blur(5px)"})
+    timer_tl.from('.spider-web-decoration p', {y: 100, opacity: 0})
+
+    const squares = gsap.utils.toArray(".timer__square");
+
+    squares.forEach((square, i) => {
+        gsap.from(square, {
+            scrollTrigger: {
+                trigger: square,
+                start: "top 50%",
+                toggleActions: "play pause play reverse",
+            },
+            x: 200,
+            opacity: 0,
+            filter: "blur(10px)",
+            delay: i / 4
+        });
+    });
 });
