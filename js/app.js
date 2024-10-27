@@ -111,4 +111,41 @@ document.addEventListener("DOMContentLoaded", (event) => {
             delay: i / 4
         });
     });
+
+    const events_tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '#events',
+            start: 'top 60%',
+            end: 'top 30%',
+            scrub: 1,
+        }
+    })
+    events_tl.from('#events h2', {scaleY: 1.2, y: -100, opacity: 0, filter: "blur(5px)"})
+    events_tl.from('#events h2+p', {y: 100, opacity: 0})
+
+    const posters = gsap.utils.toArray(".ratio-m");
+
+    posters.forEach((poster, i) => {
+        gsap.from(poster, {
+            scrollTrigger: {
+                trigger: poster,
+                start: "top 50%",
+                toggleActions: "play pause play reverse",
+            },
+            x: 200,
+            opacity: 0,
+            filter: "blur(10px)",
+            delay: i / 4
+        });
+    });
+
 });
+
+function scrollToSection(section){
+    const targetElement = document.getElementById(`${section}`);
+    if (targetElement) {
+        gsap.to(window, { duration: 1, scrollTo: targetElement, ease: "power1.out" });
+    }else{
+        alert(`No se encontró la sección con el ID: ${section}`);
+    }
+}
